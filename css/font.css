@@ -1,0 +1,24 @@
+.font1 {
+  font-family: "League Gothic", sans-serif;
+  font-family: "Pacifico", cursive;
+}
+
+.font2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.font3 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+/* slide show */
+/* slide show */
+.imgslide {
+  max-height: 70vh;
+  min-height: 70vh;
+}
+@media screen and (max-width: 500px) {
+  .imgslide {
+    min-height: 50vh;
+    max-height: 50vh;
+  }
+}
