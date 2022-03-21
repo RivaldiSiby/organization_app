@@ -7,6 +7,7 @@
     <title><?= session()->get('nameapp') ?> | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
+    <link rel="shortcut icon" href="<?= base_url('/data/organisasi/icon/' . session()->get('iconapp')); ?>" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Pacifico&display=swap" rel="stylesheet">

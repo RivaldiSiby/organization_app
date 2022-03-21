@@ -63,6 +63,10 @@ class Tborganisasi extends Migration
         //         'type' => 'VARCHAR',
         //         'constraint' => 255,
         //     ],
+        //     'icon' => [
+        //         'type' => 'VARCHAR',
+        //         'constraint' => 255,
+        //     ],
 
         // ]);
         // $this->forge->addPrimaryKey('id_organisasi', true);
