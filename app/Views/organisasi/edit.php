@@ -100,6 +100,17 @@
           <input type="text" class="d-none" id="moderator_utama" name="moderator_utama" value="<?= $organisasi['moderator_utama']; ?>">
 
           <h3>Gambar Untuk Organisasi</h3>
+          <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-info"></i> Harap dibaca!</h5>
+            <ul>
+              <li>Gambar Harus Berformat Png / jpeg / jpg</li>
+              <li>Ukuran maksimal gambar 1mb</li>
+              <li>Untuk icon harus Berformat .ico</li>
+              <li>Jika tidak ingin mengganti struktur, logo atau icon input file dari field tersbut tidak perlu diisi</li>
+
+            </ul>
+          </div>
           <div class="mb-3">
             <label for="struktur" class="form-label">Upload Gambar Baru Struktur Organisasi</label>
             <input class="form-control " type="file" id="struktur" name="struktur">
@@ -109,6 +120,11 @@
             <label for="logo" class="form-label">Upload Logo Baru Organisasi</label>
             <input class="form-control " type="file" id="logo" name="logo">
             <p id="msglogo" class="text-danger"></p>
+          </div>
+          <div class="mb-3">
+            <label for="icon" class="form-label">Upload Icon Organisasi (Format .ico)</label>
+            <input class="form-control " type="file" id="icon" name="icon">
+            <p id="msgicon" class="text-danger"></p>
           </div>
           <button id="simpan" type="submit" class="btn btn-primary">Simpan Perubahan Konfigurasi</button>
         </form>
@@ -228,6 +244,13 @@
             } else {
               $('#logo').removeClass('is-invalid')
               $('#msglogo').html('')
+            }
+            if (respond.messages.icon != "") {
+              $('#icon').addClass('is-invalid')
+              $('#msgicon').html(respond.messages.icon)
+            } else {
+              $('#icon').removeClass('is-invalid')
+              $('#msgicon').html('')
             }
 
             $(".token").html(respond.token);

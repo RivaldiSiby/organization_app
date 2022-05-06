@@ -38,6 +38,7 @@ class Home extends BaseController
             session()->set('logoapp', $home[0]['logo']);
             session()->set('strukturapp', $home[0]['struktur']);
             session()->set('angkatanapp', $home[0]['angkatan']);
+            session()->set('iconapp', $home[0]['icon']);
 
             if (count($web) > 0) {
                 // website sesi
@@ -57,6 +58,7 @@ class Home extends BaseController
             session()->set('nameapp', 'Organization-App');
             session()->set('tagapp', 'Organization-App');
             session()->set('logoapp', 'iconapp.jpg');
+            session()->set('iconapp', 'icon.ico');
             session()->set('strukturapp', '');
         }
     }
