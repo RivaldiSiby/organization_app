@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= session()->get('nameapp') ?> | Login</title>
-
+    <link rel="shortcut icon" href="<?= base_url('/data/organisasi/icon/' . session()->get('iconapp')); ?>" type="image/x-icon">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->

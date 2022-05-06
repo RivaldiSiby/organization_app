@@ -64,6 +64,7 @@ class Tborganisasi extends Migration
                 'constraint' => 255,
             ],
 
+
         ]);
         $this->forge->addPrimaryKey('id_organisasi', true);
         $this->forge->createTable('tb_organisasi');

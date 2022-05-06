@@ -121,6 +121,15 @@ class Organisasi extends ResourceController
                     'mime_in' => 'yang anda upload bukan gambar'
                 ]
             ],
+            'icon' => [
+                'rules' => 'uploaded[icon]|max_size[icon,1024]|is_image[icon]|mime_in[icon,image/x-icon,image/vnd.microsoft.icon,image/ico,image/icon]',
+                'errors' => [
+                    'uploaded' => 'Gambar icon tidak boleh kosong',
+                    'max_size' => 'Ukuran gambar tidak boleh lebih dari 1mb',
+                    'is_image' => 'yang anda upload bukan berformat gambar',
+                    'mime_in' => 'yang anda upload bukan berformat .ico'
+                ]
+            ],
 
         ];
         if (!$this->validate($rules)) {
@@ -131,6 +140,7 @@ class Organisasi extends ResourceController
                 'messages' => [
                     'struktur' => $this->validation->getError('struktur'),
                     'logo' => $this->validation->getError('logo'),
+                    'icon' => $this->validation->getError('icon'),
 
                 ]
             ];
@@ -146,8 +156,11 @@ class Organisasi extends ResourceController
         $logo = $filelogo->getRandomName();
         $filelogo->move('data/organisasi/logo', $logo);
         session()->set('logoapp', $logo);
-
-
+        // kelola gambar icon
+        $fileicon = $this->request->getFile('icon');
+        $icon = $fileicon->getRandomName();
+        $fileicon->move('data/organisasi/icon', $icon);
+        session()->set('iconapp', $icon);
 
 
         $simpan = [
@@ -164,6 +177,7 @@ class Organisasi extends ResourceController
             'email' => $this->request->getVar('email'),
             'struktur' => $struktur,
             'logo' => $logo,
+            'icon' => $icon,
 
         ];
         if ($this->organisasi->save($simpan)) {
@@ -216,6 +230,16 @@ class Organisasi extends ResourceController
                     ]
                 ];
             }
+            if ($this->request->getFile('icon')->getFilename() != "") {
+                $rules['icon'] = [
+                    'rules' => 'max_size[icon,1024]|is_image[icon]|mime_in[icon,image/x-icon,image/vnd.microsoft.icon,image/ico,image/icon]',
+                    'errors' => [
+                        'max_size' => 'Ukuran gambar tidak boleh lebih dari 1mb',
+                        'is_image' => 'yang anda upload bukan berformat gambar',
+                        'mime_in' => 'yang anda upload bukan berformat .ico'
+                    ]
+                ];
+            }
 
 
 
@@ -229,6 +253,7 @@ class Organisasi extends ResourceController
                         'messages' => [
                             'struktur' => $this->validation->getError('struktur'),
                             'logo' => $this->validation->getError('logo'),
+                            'icon' => $this->validation->getError('icon'),
 
                         ]
                     ];
@@ -262,6 +287,17 @@ class Organisasi extends ResourceController
                     unlink('data/organisasi/logo/' . $organisasi[0]['logo']);
                 }
             }
+            if ($this->request->getFile('icon')->getFilename() != "") {
+                // kelola gambar icon
+
+                $fileicon = $this->request->getFile('icon');
+                $icon = $fileicon->getRandomName();
+                $fileicon->move('data/organisasi/icon', $icon);
+                // hapus gambar lama
+                if ($organisasi[0]['icon'] != '') {
+                    unlink('data/organisasi/icon/' . $organisasi[0]['icon']);
+                }
+            }
 
 
 
@@ -288,6 +324,10 @@ class Organisasi extends ResourceController
             if ($this->request->getFile('logo')->getFilename() != "") {
                 $simpan['logo'] = $logo;
                 session()->set('logoapp', $logo);
+            }
+            if ($this->request->getFile('icon')->getFilename() != "") {
+                $simpan['icon'] = $icon;
+                session()->set('iconapp', $icon);
             }
 
             if ($this->organisasi->save($simpan)) {

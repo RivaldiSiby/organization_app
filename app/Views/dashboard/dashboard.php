@@ -97,58 +97,122 @@
             </section>
         </div>
     <?php endif; ?>
-    <br>
     <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-12' ?>">
         <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
             <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-newspaper"></i></span>
+     
+    <?php if (count($transisi) > 0) : ?>
+        <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-6' ?>">
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-newspaper"></i></span>
 
-            <div class="info-box-content">
-                <span class="info-box-text">Postingan</span>
-                <span class="info-box-number"><?= count($postingan); ?></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Postingan</span>
+                    <span class="info-box-number"><?= count($postingan); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+
             </div>
-            <!-- /.info-box-content -->
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"> <i class="fas fa-columns"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Kegiatan</span>
+                    <span class="info-box-number"><?= count($kegiatan); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-copy"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Laporan Keuangan</span>
+                    <span class="info-box-number"><?= count($keuangan); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="far fa-envelope"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Surat</span>
+                    <span class="info-box-number"><?= count($surat); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-users"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Member</span>
+                    <span class="info-box-number"><?= count($member); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+        </div>
+
+    <?php else : ?>
+        <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-6' ?>">
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-newspaper"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Postingan</span>
+                    <span class="info-box-number"><?= count($postingan); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
         </div>
         <!-- /.info-box -->
-        <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
-            <span class="info-box-icon bg-primary elevation-1"> <i class="fas fa-columns"></i></span>
+        <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-6' ?>">
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"> <i class="fas fa-columns"></i></span>
 
-            <div class="info-box-content">
-                <span class="info-box-text">Kegiatan</span>
-                <span class="info-box-number"><?= count($kegiatan); ?></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Kegiatan</span>
+                    <span class="info-box-number"><?= count($kegiatan); ?></span>
+                </div>
+                <!-- /.info-box-content -->
             </div>
-            <!-- /.info-box-content -->
+        </div>
+
+        <!-- /.info-box -->
+        <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-6' ?>">
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-copy"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Laporan Keuangan</span>
+                    <span class="info-box-number"><?= count($keuangan); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+        </div>
+        <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-6' ?>">
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="far fa-envelope"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Surat</span>
+                    <span class="info-box-number"><?= count($surat); ?></span>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
         </div>
         <!-- /.info-box -->
-        <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
-            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-copy"></i></span>
+        <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-6' ?>">
+            <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+                <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-users"></i></span>
 
-            <div class="info-box-content">
-                <span class="info-box-text">Laporan Keuangan</span>
-                <span class="info-box-number"><?= count($keuangan); ?></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Member</span>
+                    <span class="info-box-number"><?= count($member); ?></span>
+                </div>
+                <!-- /.info-box-content -->
             </div>
-            <!-- /.info-box-content -->
+            <!-- /.info-box -->
         </div>
-        <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
-            <span class="info-box-icon bg-primary elevation-1"><i class="far fa-envelope"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Surat</span>
-                <span class="info-box-number"><?= count($surat); ?></span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-        <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
-            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-users"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Member</span>
-                <span class="info-box-number"><?= count($member); ?></span>
-            </div>
-            <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-    </div>
+    <?php endif; ?>
 
 
 </div>
