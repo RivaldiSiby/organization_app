@@ -12,10 +12,10 @@
             array_push($transisi, session()->get("slide$i" . 'app'));
         }
     }
-
+    
     ?>
     <?php if (session()->get('level') == 'admin') : ?>
-        <div class="col-<?= count($transisi) > 0 ? 'md-12' : 'md-6' ?>">
+        <div class="col-<?= count($transisi) > 0 ? 'md-12' : 'md-12' ?>">
             <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-user-shield"></i></span>
 
@@ -31,7 +31,7 @@
     <!-- /.col -->
     <!-- /.col -->
     <?php if (session()->get('level') == 'admin' or session()->get('jabatan') != 'Member') : ?>
-        <div class="col-<?= count($transisi) > 0 ? 'md-12' : 'md-6' ?>">
+        <div class="col-<?= count($transisi) > 0 ? 'md-12' : 'md-12' ?>">
             <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-th"></i></span>
 
@@ -46,7 +46,7 @@
     <?php endif; ?>
     <!-- /.col -->
     <?php if (session()->get('level') == 'admin' or session()->get('masterprogram')) : ?>
-        <div class="col-<?= count($transisi) > 0 ? 'md-12' : 'md-6' ?>">
+        <div class="col-<?= count($transisi) > 0 ? 'md-12' : 'md-12' ?>">
             <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
                 <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-ellipsis-h"></i></span>
 
@@ -97,6 +97,10 @@
             </section>
         </div>
     <?php endif; ?>
+    <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-12' ?>">
+        <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">
+            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-newspaper"></i></span>
+     
     <?php if (count($transisi) > 0) : ?>
         <div class="col-<?= count($transisi) > 0 ? 'md-4' : 'md-6' ?>">
             <div class="info-box mb-3 shadow" style="border-right:20px solid #007BFF ;">

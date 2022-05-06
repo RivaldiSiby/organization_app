@@ -3,6 +3,7 @@
     <!-- /.col -->
     <?php $transisi = []; ?>
     <?php
+
     // memasukan array transisi
 
     for ($i = 1; $i <= 5; $i++) {
@@ -10,7 +11,6 @@
             array_push($transisi, session()->get("slide$i" . 'app'));
         }
     }
-
     ?>
     <?php if (session()->get('level') == 'admin') : ?>
         <div class="col-<?= count($transisi) > 0 ? 'md-12' : 'md-6' ?>">
